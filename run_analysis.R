@@ -3,6 +3,16 @@ setwd("~/R/dataClean/data")
 #load library
 library(plyr)
 
+#Download the source file and save it Input folder in working directory
+
+fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url=fileUrl,destfile="Data.zip",method="auto")
+
+#Unzip the dowloaded file in working directory
+#the files will overwrite existing with similar names
+
+unzip(zipfile="Data.zip")
+
 #merge the training and the test sets to create one data set 
 #-trainging data
 xTrain <- read.table("UCI HAR Dataset/train/X_train.txt")
@@ -40,6 +50,7 @@ write.table(averagesData, "averagesData.txt", row.name=FALSE)
 
 #create a second dataset with the averages of each variable for each activity 
 
-average <- aggregate(x=allData, by=list(activities=allData$activity, subjectData=allData$subject), FUN=mean)
-average <- average[, !(colnames(average) %in% c("subjectData","activity"))]
-write.table(average, "averages.txt", row.name=FALSE)
+average <- aggregate(averagesData[,3:68], by=list(averagesData$subject, averagesData$activity),mean)
+average <- average[order(average$Group.1),]
+names(average)[1:2] <- c("subject", "test")
+write.table(average, "averages.txt", row.name=FALSE, sep=",")
