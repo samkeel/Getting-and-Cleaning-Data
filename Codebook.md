@@ -31,21 +31,21 @@ The attached R script (run_analysist.R) performs the following tasks to clean up
 It reads and merges the test and training data from the provided text files:
 
 Test Files:
-'''
+```
 X_test.txt
 Y_test.txt
 Subject_text.txt
-'''
+```
 Training Files:
-'''
+```
 X_train.txt
 y_train.txt
 subject_train.txt
-'''
+```
 The script reads the activity names from the provided file
-'''
+```
 activity_labels.txt
-'''
+```
 
 The script creates a dataframe named averagesData which contains the mean and standard deviation of each activity, the activities are named using the provided activity_labels text file.
 
