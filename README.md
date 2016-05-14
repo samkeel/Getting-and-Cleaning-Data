@@ -20,4 +20,4 @@ run_analysis.R performs the following:
 - Exports a single dataframe to the working directory in a text file named "averagesData.txt"
 - Exports a second tidfy dataframe text file to the working directory named "averages.txt" that contains averages for each subject and activity.
 
-Note that there has been no assumptions on number of records, only the location of the files. 
+*Note that there has been no assumptions on number of records, only the location of the files.*
