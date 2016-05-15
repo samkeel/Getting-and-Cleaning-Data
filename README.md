@@ -1,5 +1,5 @@
 #Getting and cleaning data course project
-This directory is for the AGetting and Cleaning Data Coursera course project hosted through John Hopkins University.
+This directory is for the Getting and Cleaning Data Coursera course project hosted through John Hopkins University.
 
 #####Objectives
 run_analysis.R performs the following:
